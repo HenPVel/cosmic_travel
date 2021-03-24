@@ -1,0 +1,13 @@
+<h1><%= @scientist.name%>'s Profile Page</h1>
+
+<h2>Planets this Scientist Has Visited and The Mission Associated With It</h1>
+
+<% @scientist.missions.each do |m|%>
+<ul>
+<li><%= m.planet.name%>, Mission: <%= m.name %></li>
+</ul>
+<% end %>
+
+<h4>Click Button Below To Delete This User</h4>
+
+<%= button_to "DELETE THIS!", scientist_path(@scientist.id), method: :delete, data: {confirm: "You sure dog?"} %>

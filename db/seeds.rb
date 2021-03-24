@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Mission.destroy_all
+Mission.destroy_all
 Planet.destroy_all
-# Scientist.destroy_all
+Scientist.destroy_all
+Mission.reset_pk_sequence
+Planet.reset_pk_sequence
+Scientist.reset_pk_sequence
 
 planet_images = [
   "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2003/04/martian_poles_and_cloud_cover/9834222-3-eng-GB/Martian_poles_and_cloud_cover_pillars.jpg",
@@ -28,9 +31,9 @@ planet_images = [
                         nearest_star: Faker::Space.star,
                         planet_img: planet_images.sample)}
 
-# 15.times {Scientist.create(name: Faker::FunnyName.name,
-#                            field_of_study: Faker::Educator.subject)}
+15.times {Scientist.create(name: Faker::FunnyName.name,
+                           field_of_study: Faker::Educator.subject)}
 
-# 20.times {Mission.create(name: Faker::TvShows::Buffy.unique.episode,
-#                          scientist_id: Scientist.all.sample.id, 
-#                          planet_id: Planet.all.sample.id)}
+20.times {Mission.create(name: Faker::TvShows::Buffy.unique.episode,
+                         scientist_id: Scientist.all.sample.id, 
+                         planet_id: Planet.all.sample.id)}

@@ -1,0 +1,7 @@
+<h1> Here are all the brave scientists!</h1>
+
+<% @scientists.each do |s| %>
+<ul>
+<li><%= link_to s.name, scientist_path(s)%> </li>
+</ul>
+<% end %>
